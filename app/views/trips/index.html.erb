@@ -1,0 +1,11 @@
+<h1>All Trips</h1>
+
+<% @trips.each do |trip| %>
+  <%= trip.name %>
+<% end %>
+
+<% if @trips.empty? %>
+  <em>There are no trips at this time.</em>
+<% end %>
+
+<%= link_to "Create Trip", new_trip_path %>

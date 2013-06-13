@@ -1,7 +1,9 @@
 <h1>All Trips</h1>
-
+<hr>
 <% @trips.each do |trip| %>
-  <%= trip.name %>
+  <ul>
+    <%= trip.name %>
+  </ul>
 <% end %>
 
 <% if @trips.empty? %>

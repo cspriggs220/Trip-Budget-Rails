@@ -9,10 +9,12 @@ class TripsController < ApplicationController
   end
 
   def create
-    if @trip = Trip.create( params[:trip] )
-      flash[:notice] = "Your trip was saved!"
+    @trip = Trip.create( params[:trip] )
+    if @trip.save
+      flash[:notice] = "Your trip was successfully created!"
       redirect_to :root
     else
+      flash[:notice] = @trip.errors.full_messages.join(",")
       render :new
     end
   end

@@ -11,6 +11,10 @@ When "I open the page" do
   save_and_open_page
 end
 
+When(/^I go to the user index page$/) do
+  visit "/trips"
+end
+
 When(/^I (?:click|press) "(.*?)"$/) do |text|
   click_link_or_button text
 end

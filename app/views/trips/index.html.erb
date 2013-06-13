@@ -9,5 +9,7 @@
 <% if @trips.empty? %>
   <em>There are no trips at this time.</em>
 <% end %>
-
-<%= link_to "Create Trip", new_trip_path %>
+<br />
+<%= link_to "Create Trip", new_trip_path %><br />
+<%= link_to "View Trips", trips_path %><br />
+<%= link_to "Sign Out", destroy_user_session_path %><br />

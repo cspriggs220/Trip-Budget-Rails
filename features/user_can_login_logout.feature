@@ -1,5 +1,5 @@
 Feature: Users can log in and log out
-  In order to save my projects
+  In order to create my trip budget
   As a user
   I want to log in
 

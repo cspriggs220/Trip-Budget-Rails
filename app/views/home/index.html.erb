@@ -1,10 +1,10 @@
-<h2>Trip Budget</h2>
+<h2>Welcome to Trip Budget</h2>
 <hr>
 <% unless current_user %>
   <%= link_to "Sign In", new_user_session_path %>
+  <%= link_to "Create a Trip", new_trip_path %><br />
+  <%= link_to "View Trips", trips_path %><br />
 <% end %>
-
-<%= link_to "View Trips", trips_path %><br />
 <br />
 <br />
 <%= link_to "Sign Out", destroy_user_session_path %><br />

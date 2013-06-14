@@ -2,7 +2,7 @@
 <hr>
 <% @trips.each do |trip| %>
   <ul>
-    <%= trip.name %>
+    <%= link_to "#{trip.name}", trip_path(trip) %>
   </ul>
 <% end %>
 

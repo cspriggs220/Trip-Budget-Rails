@@ -1,7 +1,7 @@
-Feature: Users can log in and log out
+Feature: Users can signs in and signs out
   In order to create my trip budget
   As a user
-  I want to log in
+  I want to sign in
 
   Scenario: Happy Path
     Given the user "bob@example.com" with password "password1"
@@ -30,3 +30,8 @@ Feature: Users can log in and log out
     And I fill in "password1" for "Password"
     And I press "Sign in"
     Then I should see "Your username or password is incorrect. Please try again."
+
+  Scenario: User signs out
+    Given I am logged in
+    When I press "Sign Out"
+    Then I should see "You are now signed out."

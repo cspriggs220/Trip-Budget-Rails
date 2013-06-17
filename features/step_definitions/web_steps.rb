@@ -1,8 +1,3 @@
-Given(/^the user "(.*?)" with password "(.*?)"$/) do |email, password|
-  user = User.create( email: email, password: password )
-  refute user.new_record?
-end
-
 When(/^I go to the homepage$/) do
   visit "/"
 end

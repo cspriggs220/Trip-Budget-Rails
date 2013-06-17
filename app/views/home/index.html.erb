@@ -5,7 +5,4 @@
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %><br /><br />
   <%= link_to "Create a Trip", new_trip_path %><br />
   <%= link_to "View Trips", trips_path %><br />
-<% else %>
-  Please sign in<br /><br />
-  <%= link_to "Sign In", new_user_session_path %>
 <% end %>

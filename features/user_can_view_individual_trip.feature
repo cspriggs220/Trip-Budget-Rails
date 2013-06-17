@@ -1,4 +1,3 @@
-@wip
 Feature: User can view individual trip page
   In order to view my trip info
   As a user

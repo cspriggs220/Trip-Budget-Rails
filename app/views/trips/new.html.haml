@@ -1,0 +1,24 @@
+%h1 Create a Trip
+%hr
+  %li
+    = form_for @trip do |f|
+      - @trip.errors.full_messages.each do |message|
+        %p= message
+      = f.label :name, "Trip Name"
+      = f.text_field :name
+      %br/
+      %br/
+      %br/
+      %h2 Set your Budgets
+      %hr
+        / Choose A Category
+        / Dropdown box
+        / Amount
+        / 0.00 box
+        %br/
+        %br/
+        %br/
+        / Cancel button
+        = link_to "Cancel", @trip
+        / Save button
+        = f.submit "Save Trip!"

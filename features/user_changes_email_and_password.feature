@@ -1,4 +1,3 @@
-@wip
 Feature: User changes email and password
 
   Scenario: Email happy path

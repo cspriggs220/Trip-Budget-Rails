@@ -1,19 +1,23 @@
-<h2>Create a Trip</h2>
+<h1>Create a Trip</h1>
 <hr>
 <%= form_for @trip  do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.submit "Save Trip!" %>
-<% end %>
-<br />
-<br />
-<br />
-<h3>Set your Budgets</h3>
-<hr>
+  <br />
+  <br />
+  <br />
+  <h2>Set your Budgets</h2>
+  <hr>
 <!-- Choose A Category  -->
 <!-- Dropdown box -->
 <!-- Amount -->
 <!-- 0.00 box -->
 
+  <br />
+  <br />
+  <br />
 <!-- Cancel button -->
+  <%= link_to "Cancel", @trip %>
 <!-- Save button -->
+  <%= f.submit "Save Trip!" %>
+  <% end %>

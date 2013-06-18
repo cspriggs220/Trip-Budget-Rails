@@ -1,7 +1,8 @@
-<h2>Welcome to Trip Budget</h2>
+<h1>Welcome to Trip Budget</h1>
 <hr>
 <% if user_signed_in? %>
-  Signed in as <%= current_user.email %>.<br /><br />
-  <%= link_to "Create a Trip", new_trip_path %><br />
+  Signed in as<br />
+  <%= current_user.email %>.<br /><br />
+  <%= link_to "Create a Trip", new_trip_path %><br /><br />
   <%= link_to "View Trips", trips_path %><br />
 <% end %>

@@ -1,27 +1,21 @@
 Feature: Users can view trip
-  In order to see what trip I can plan to budget
-  As a user
-  I want to view my list of created trips
 
   Scenario: Single Trip
-    Given the user "bob@example.com" with password "password1"
-    When I go to the homepage
-    And I click "Sign In"
-    And I fill in "bob@example.com" for "Email"
-    And I fill in "password1" for "Password"
-    And I press "Sign in"
-    When I click "Create a Trip"
-    And I fill in "Seattle" for "Name"
-    And I click "Save Trip!"
-    When I click "View Trips"
-    Then I should see "Seattle"
-
-  Scenario: No Trips Created
-    Given the user "bob@example.com" with password "password1"
-    When I go to the homepage
-    And I click "Sign In"
-    And I fill in "bob@example.com" for "Email"
-    And I fill in "password1" for "Password"
-    And I press "Sign in"
-    When I click "View Trips"
-    Then I should see "There are no trips at this time"
+    Given "jim@example.com" has the following trips:
+        |  name          |
+        |  Seattle       |
+        |  Denver        |
+    And I am logged in
+    And I have the following trips:
+        |  name          |
+        |  Austin        |
+        |  Boston        |
+        |  London        |
+    When I go to the trips page
+    Then I should see the following list:
+        |  Austin        |
+        |  Boston        |
+        |  London        |
+    And I should not see any of the following:
+        |  Seattle       |
+        |  Denver        |

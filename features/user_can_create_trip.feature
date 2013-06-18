@@ -1,32 +1,43 @@
 Feature: Users can create trip
-  In order to set my trip budget
-  As a user
-  I want to create a new trip
 
   Scenario: Happy Path
-    Given the user "bob@example.com" with password "password1"
-    When I go to the user index page
-    When I click "Create Trip"
-    And I fill in "Boston" for "Name"
+    Given I am logged in
+    And I have the following trips:
+          |  name          |
+          |  Dallas        |
+          |  Austin        |
+    When I go to the trips page
+    When I click "New Trip"
+    And I fill in "Name" with "Boston"
     And I click "Save Trip!"
-    Then I should see "Your trip was successfully created!"
+    Then I should see "Your Boston trip was successfully created!"
+    And I should see the following list:
+          |  Dallas        |
+          |  Austin        |
+          |  Boston        |
+
 
   Scenario: No Trip Name Given
-    Given the user "bob@example.com" with password "password1"
-    When I go to the user index page
-    When I click "Create Trip"
-    And I fill in "" for "Name"
+    Given I am logged in
+    And I have the following trips:
+          |  name          |
+          |  Dallas        |
+          |  Austin        |
+    When I go to the trips page
+    When I click "New Trip"
+    And I fill in "Name" with ""
     And I click "Save Trip!"
     Then I should see "Name can't be blank"
 
+
   Scenario: Duplicate Trip Name Given
-    Given the user "bob@example.com" with password "password1"
-    When I go to the user index page
-    When I click "Create Trip"
+    Given I am logged in
+    When I go to the trips page
+    When I click "New Trip"
     And I fill in "Chicago" for "Name"
     And I click "Save Trip!"
-    When I go to the user index page
-    When I click "Create Trip"
+    When I go to the trips page
+    When I click "New Trip"
     And I fill in "Chicago" for "Name"
     And I click "Save Trip!"
-    Then I should see "Name has already been taken"
+    Then I should see "Name must be unique"

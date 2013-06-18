@@ -13,7 +13,7 @@ Then(/^I (?:should be able to log back in as|am logged in as)? "(.*?)" with pass
 end
 
 Given "I am logged in" do
-  user = User.create( email: "bob@example.com", password: "password" )
+  @user = Fabricate(:user, email: "bob@example.com")
   visit new_user_session_path
   fill_in "Email", with: "bob@example.com"
   fill_in "Password", with: "password"

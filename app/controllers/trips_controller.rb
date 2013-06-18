@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips.all
+    # @trip = Trip.new
   end
 
   def new
@@ -9,11 +10,13 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.create( params[:trip] )
+    @trips = current_user.trips.all
+    @trip = current_user.trips.build(params[:trip])
+    # @trip = Trip.create( params[:trip] )
     if @trip.save
-      flash[:notice] = "Your trip was successfully created!"
+      flash[:notice] = "Your #{@trip.name} trip was successfully created!"
       # redirect_to @trip, notice: "Your trip was successfully created!"
-      redirect_to :root
+      redirect_to trips_path
     else
       flash[:notice] = @trip.errors.full_messages.join(",")
       render :new

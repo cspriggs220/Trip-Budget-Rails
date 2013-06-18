@@ -28,6 +28,7 @@ group :test do
   gem 'capybara'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'fabrication'
   gem 'launchy'
   gem 'rspec-rails'
 end

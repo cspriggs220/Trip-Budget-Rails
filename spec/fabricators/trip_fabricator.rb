@@ -1,0 +1,2 @@
+Fabricator(:trip) do
+end

@@ -16,17 +16,23 @@
             = link_to "Settings", edit_user_registration_path
             |
             = link_to "Sign Out", destroy_user_session_path, method: :delete
+            %p= current_user.email
           - else
             = link_to "Sign Up", new_user_registration_path
             |
             = link_to "Sign In", new_user_session_path
+            %br/
+            %br/
+            %p Please sign in
     #main{:role => "main"}
       .container
         .content
           .row
             .span12
-              %p.notice= notice
-              %p.alert= alert
+              - if flash[:notice]
+                %li.notice= notice
+              - if flash[:alert]
+                %li.alert= alert
               = yield
           %footer
       / ! end of .container

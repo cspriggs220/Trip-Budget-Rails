@@ -23,6 +23,11 @@ When(/^I (?:click|press) "(.*?)"$/) do |text|
   click_link_or_button text
 end
 
+When(/^click "(.*?)" for trip "(.*?)"$/) do |text, trip_name|
+  trip_id = Trip.where( name: trip_name ).first.id
+  find_link("#{text.downcase}_trip_#{trip_id}").click
+end
+
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field_named, value|
   fill_in field_named, with: value
 end
@@ -41,7 +46,7 @@ end
 
 Then(/^I should see the following list:$/) do |table|
   table.raw.each_with_index do |content, row|
-    page.should have_xpath("//ul/li[#{row+1}][contains(normalize-space(.), '#{content[0]}')]")
+    page.should have_xpath("//tbody/tr[#{row+1}]/td[contains(normalize-space(.), '#{content[0]}')]")
   end
 end
 

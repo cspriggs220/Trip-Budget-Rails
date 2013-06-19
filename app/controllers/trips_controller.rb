@@ -1,8 +1,12 @@
 class TripsController < ApplicationController
+  before_filter :find_trip, :only => [:show, :edit, :update, :destroy]
+
+  def find_trip
+    @trip = Trip.find( params[:id] )
+  end
 
   def index
-    @trips = current_user.trips.all
-    # @trip = Trip.new
+    @trips = current_user.trips.order("created_at").all
   end
 
   def new
@@ -12,11 +16,9 @@ class TripsController < ApplicationController
   def create
     @trips = current_user.trips.all
     @trip = current_user.trips.build(params[:trip])
-    # @trip = Trip.create( params[:trip] )
     if @trip.save
-      flash[:notice] = "Your #{@trip.name} trip was successfully created!"
-      # redirect_to @trip, notice: "Your trip was successfully created!"
-      redirect_to trips_path
+      redirect_to(trips_path,
+        :notice => "Your #{@trip.name} trip was successfully created!")
     else
       flash[:notice] = @trip.errors.full_messages.join(",")
       render :new
@@ -24,7 +26,19 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find( params[:id] )
+  end
+
+  def edit
+  end
+
+  def update
+    if @trip.update_attributes( params[:trip] )
+      redirect_to(trips_path,
+        :notice => "Your trip was successfully updated")
+    else
+      flash[:notice] = @trip.errors.full_messages.join(",")
+      render :edit
+    end
   end
 
 end

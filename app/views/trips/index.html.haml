@@ -1,9 +1,12 @@
 %h1 Trips
 %hr
-%ul
-  - @trips.each do |trip|
-    %li= link_to trip.name, trip_path(trip)
-    %br/
+%table
+  %tbody
+    - @trips.each do |trip|
+      %tr
+        %td= link_to trip.name, trip_path(trip)
+        %td= link_to "Edit", edit_trip_path(trip), id: "edit_trip_#{trip.id}"
+        / %td= link_to "Delete", trip, :confirm => 'Are you sure?', :method => :delete
 - if @trips.empty?
   %em There are no trips at this time.
 %br/

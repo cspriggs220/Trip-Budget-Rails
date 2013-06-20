@@ -36,15 +36,6 @@ When(/^I fill in "(.*?)" for "(.*?)"$/) do |value, field_name|
   fill_in field_name, with: value
 end
 
-When /^I expect to click "([^"]*)" on a confirmation box saying "([^"]*)"$/ do |option, message|
-  retval = (option == 'OK') ? 'true' : 'false'
-  page.evaluate_script("window.confirm = function (msg) {
-    document.cookie = msg
-    return #{retval}
-  }")
-  @expected_message = message.gsub("\\n", "\n")
-end
-
 Then(/^I should see "(.*?)"$/) do |content|
   page.should have_content(content)
 end

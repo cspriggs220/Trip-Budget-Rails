@@ -1,6 +1,6 @@
 Feature: User edits a trip
   As a logged in user
-  I want to be edit my trip
+  I want to be able to edit my trip
   so I can change the trip name
 
     Scenario: Single Edit
@@ -13,7 +13,7 @@ Feature: User edits a trip
       And click "Edit" for trip "Dallas"
       And I fill in "Name" with "Shanghai"
       And I click "Update Trip"
-      Then I should see "Your trip was successfully updated"
+      Then I should see "Your trip was updated"
       And I should see the following list:
             |  Shanghai      |
             |  Austin        |

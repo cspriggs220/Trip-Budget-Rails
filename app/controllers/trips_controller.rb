@@ -18,7 +18,7 @@ class TripsController < ApplicationController
     @trip = current_user.trips.build(params[:trip])
     if @trip.save
       redirect_to(trips_path,
-        :notice => "Your #{@trip.name} trip was successfully created!")
+        :notice => "Your #{@trip.name} trip was created!")
     else
       flash[:notice] = @trip.errors.full_messages.join(",")
       render :new
@@ -34,11 +34,17 @@ class TripsController < ApplicationController
   def update
     if @trip.update_attributes( params[:trip] )
       redirect_to(trips_path,
-        :notice => "Your trip was successfully updated")
+        :notice => "Your trip was updated")
     else
       flash[:notice] = @trip.errors.full_messages.join(",")
       render :edit
     end
+  end
+
+  def destroy
+    @trip.destroy
+    redirect_to(trips_path,
+      :notice => "Your trip was deleted")
   end
 
 end

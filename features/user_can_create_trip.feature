@@ -10,7 +10,7 @@ Feature: Users can create trip
     When I click "New Trip"
     And I fill in "Name" with "Boston"
     And I click "Save Trip!"
-    Then I should see "Your Boston trip was successfully created!"
+    Then I should see "Your Boston trip was created!"
     And I should see the following list:
           |  Dallas        |
           |  Austin        |

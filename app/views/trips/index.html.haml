@@ -6,7 +6,7 @@
       %tr
         %td= link_to trip.name, trip_path(trip)
         %td= link_to "Edit", edit_trip_path(trip), id: "edit_trip_#{trip.id}"
-        / %td= link_to "Delete", trip, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to "Delete", trip, id: "delete_trip_#{trip.id}", :method => :delete
 - if @trips.empty?
   %em There are no trips at this time.
 %br/

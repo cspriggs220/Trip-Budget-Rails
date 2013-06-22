@@ -1,0 +1,22 @@
+<h1>Trips</h1>
+<hr>
+<table>
+  <tbody>
+    <%- @trips.each do |trip| %>
+      <tr>
+        <td><%= link_to trip.name, trip_path(trip)%></td>
+        <td><%= link_to "Edit", edit_trip_path(trip), id: "edit_trip_#{trip.id}"%></td>
+        <td><%= link_to "Delete", trip, id: "delete_trip_#{trip.id}", :method => :delete%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%- if @trips.empty? %>
+  <em>There are no trips at this time</em>
+<% end %>
+<br />
+<br />
+<%= link_to "New Trip", new_trip_path %>
+<br />
+<br />
+<%= link_to "Home", :root %>

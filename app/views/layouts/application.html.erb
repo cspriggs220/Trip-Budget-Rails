@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset= "utf-8">
+    <meta content= "width=device-width, initial-scale=1.0", name= "viewport">
+    <title>Trip Budget</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <% if user_signed_in? %>
+            <%= link_to "Settings", edit_user_registration_path %>
+            |
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            <p><%= current_user.email %></p>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %>
+            |
+            <%= link_to "Sign In", new_user_session_path %>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <div id="main" role= "main">
+      <div class="container">
+        <div class="content">
+          <div class="row">
+            <div class="span12">
+              <%- if flash[:notice] %>
+                <li class="notice"><%= notice %></li>
+              <% end %>
+              <%- if flash[:alert] %>
+                <li class="alert"><%= alert %></li>
+              <% end %>
+
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+      </div><!-- ! end of .container -->
+    </div>
+  </div>
+  </body>
+</html>

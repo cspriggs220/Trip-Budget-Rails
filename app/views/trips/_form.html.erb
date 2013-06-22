@@ -1,0 +1,31 @@
+<div id="create_message">
+  <%- @trip.errors.full_messages.each do |message| %>
+      <%= message %>
+  <% end %>
+</div>
+<%= form_for @trip do |f| %>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= f.text_field :name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.label :name, "Trip Name" %>
+        </td>
+      </tr>
+      <br />
+      <br />
+      <tr>
+        <td>
+          <%= link_to "Cancel", trips_path %>
+        </td>
+        <td>
+          <%= f.submit "Save Trip!" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

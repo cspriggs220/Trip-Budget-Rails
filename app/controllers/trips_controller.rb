@@ -17,7 +17,7 @@ class TripsController < ApplicationController
     @trips = current_user.trips.all
     @trip = current_user.trips.build(params[:trip])
     if @trip.save
-      redirect_to(trips_path,
+      redirect_to(trip_path,
         :notice => "Your #{@trip.name} trip was created!")
     else
       flash[:notice] = @trip.errors.full_messages.join(",")

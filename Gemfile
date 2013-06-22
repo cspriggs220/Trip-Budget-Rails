@@ -6,6 +6,7 @@ gem 'haml-rails'
 gem 'fabrication'
 gem 'jquery-rails'
 gem 'pg'
+gem 'awesome_print'
 gem 'rails', '3.2.13'
 
 # Gems used only for assets and not required

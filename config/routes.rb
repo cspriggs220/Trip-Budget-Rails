@@ -3,10 +3,10 @@ TripBudgetRails::Application.routes.draw do
 
   root :to => 'home#index'
 
-  resources :trips
+  resources :trips do
   # resources :expenses
-  # resources :budgets
-  # end
+    resources :budgets
+  end
 
 
   # The priority is based upon order of creation:

@@ -11,6 +11,7 @@ Feature: Users can create trip
     And I fill in "Name" with "Boston"
     And I click "Save Trip!"
     Then I should see "Your Boston trip was created!"
+    When I click "Back"
     And I should see the following list:
           |  Dallas        |
           |  Austin        |

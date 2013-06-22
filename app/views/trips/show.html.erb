@@ -6,8 +6,49 @@
 </div>
 <br />
 <br />
-<h2>Budget</h2>
+<h2>Set Budgets</h2>
 <hr>
+<table style="width:400px">
+  <thead id="budget_head">
+    <tr>
+      <th>Category</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <%# @trip.categories.each do |category| %>
+       <%# budget.categories.each do |category| %>
+       <%= form_for []
+      <td>Food</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Entertainment</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Lodging</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Airfare</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Fuel</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Shopping</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
 <br />
 <br />
 <%= link_to "Back", trips_path %>

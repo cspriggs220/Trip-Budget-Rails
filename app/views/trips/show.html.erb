@@ -16,37 +16,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <%# @trip.categories.each do |category| %>
-       <%# budget.categories.each do |category| %>
-       <%= form_for []
-      <td>Food</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Entertainment</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Lodging</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Airfare</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Fuel</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Shopping</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Other</td>
-      <td>0.00</td>
-    </tr>
+    <% @trip.budgets.each do |budget| %>
+      <tr>
+        <td id="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget, :trip_id => @trip.id) %></td>
+        <td id="budget_total"><%= budget.total %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 <br />

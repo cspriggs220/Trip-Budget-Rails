@@ -15,6 +15,10 @@ When "show me the page" do
   save_and_open_page
 end
 
+Given(/^a category$/) do
+  Category.create( name: "Food" )
+end
+
 When(/^I go to the user index page$/) do
   visit "/trips"
 end

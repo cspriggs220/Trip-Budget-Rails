@@ -1,9 +1,6 @@
 class TripsController < ApplicationController
   before_filter :find_trip, :only => [:show, :edit, :update, :destroy]
 
-  def find_trip
-    @trip = Trip.find( params[:id] )
-  end
 
   def index
     @trips = current_user.trips.order("created_at").all
@@ -47,4 +44,7 @@ class TripsController < ApplicationController
       :notice => "Your trip was deleted")
   end
 
+  def find_trip
+    @trip = current_user.trips.find( params[:id] )
+  end
 end

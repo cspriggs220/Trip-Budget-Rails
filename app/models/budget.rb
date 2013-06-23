@@ -4,4 +4,8 @@ class Budget < ActiveRecord::Base
   belongs_to :category
 
   validates_presence_of :category_id, :total
+
+  def name
+    self.category.name
+  end
 end

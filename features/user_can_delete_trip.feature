@@ -26,4 +26,3 @@ Feature: User deletes a trip
       Then I should see "Your trip was deleted"
       And click "Delete" for trip "Dallas"
       Then I should see "There are no trips at this time"
-      When show me the page

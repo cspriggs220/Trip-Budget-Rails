@@ -5,7 +5,7 @@ TripBudgetRails::Application.routes.draw do
 
   resources :trips do
   # resources :expenses
-    resources :budgets, only: [:edit]
+    resources :budgets, only: [:edit, :update]
   end
 
 

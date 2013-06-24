@@ -1,0 +1,29 @@
+<h1>Set Budget</h1>
+<hr>
+<p>Edit your budget amount below and save</p>
+<%= form_for [@trip, @budget] do |f| %>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= f.label :total, "#{@budget.name} Total" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.text_field :total %>
+        </td>
+      </tr>
+      <br />
+      <br />
+      <tr>
+        <td>
+          <%= link_to "Back", trip_path %>
+        </td>
+        <td>
+          <%= f.submit "Save" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

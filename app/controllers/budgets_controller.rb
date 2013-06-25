@@ -8,7 +8,7 @@ class BudgetsController < ApplicationController
     @trip = Trip.find( params[:trip_id] )
     @budget = @trip.budgets.find( params[:id] )
     if @budget.update_attributes( params[:budget] )
-      redirect_to(trip_path,
+      redirect_to(@trip,
         :notice => "#{@budget.name} budget was updated")
     else
       flash[:notice] = "Total amount must be given"

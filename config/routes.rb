@@ -4,8 +4,9 @@ TripBudgetRails::Application.routes.draw do
   root :to => 'home#index'
 
   resources :trips do
-  # resources :expenses
-    resources :budgets, only: [:edit, :update]
+    resources :budgets, only: [:edit, :update] do
+      resources :expenses
+    end
   end
 
 

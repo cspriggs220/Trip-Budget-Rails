@@ -8,7 +8,7 @@
 <br />
 <h2>Set Budgets</h2>
 <hr>
-<table style="width:400px">
+<table style="width:700px">
   <thead id="budget_head">
     <tr>
       <th>Category</th>
@@ -18,8 +18,16 @@
   <tbody>
     <% @trip.budgets.each do |budget| %>
       <tr>
-        <td id="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget, :trip_id => @trip.id) %></td>
-        <td id="budget_total"><%= budget.total %></td>
+        <td class="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget, :trip_id => @trip.id) %></td>
+        <td class="budget_total"><%= budget.total %></td>
+        <% if budget.total > 0 %>
+            <td class="expense_button">
+              <%= link_to "Add Expense", new_trip_budget_expense_path(budget, :trip_id => @trip.id) %>
+            <%#= form_tag({:controller => "expenses", :action => "new"}, :method => 'get') do %>
+              <%#= submit_tag("Add Expense") %>
+            <%# end %>
+            </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -23,6 +23,7 @@ end
 
 group :development do
   gem 'html2haml'
+  gem 'better_errors'
 end
 
 group :test do

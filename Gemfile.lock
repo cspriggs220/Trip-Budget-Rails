@@ -32,6 +32,9 @@ GEM
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
+    better_errors (0.9.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     builder (3.0.4)
@@ -41,6 +44,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -172,6 +176,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  better_errors
   bootstrap-sass
   capybara
   coffee-rails (~> 3.2.1)

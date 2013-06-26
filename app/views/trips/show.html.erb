@@ -18,11 +18,12 @@
   <tbody>
     <% @trip.budgets.each do |budget| %>
       <tr>
-        <td class="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget, :trip_id => @trip.id) %></td>
+        <td class="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget,
+         :trip_id => @trip.id) %></td>
         <td class="budget_total"><%= budget.total %></td>
         <% if budget.total > 0 %>
             <td class="expense_button">
-              <%= link_to "Add Expense", new_trip_budget_expense_path(budget, :trip_id => @trip.id) %>
+              <%= link_to "Add Expense", new_trip_budget_expense_path( @trip, budget ) %>
             <%#= form_tag({:controller => "expenses", :action => "new"}, :method => 'get') do %>
               <%#= submit_tag("Add Expense") %>
             <%# end %>

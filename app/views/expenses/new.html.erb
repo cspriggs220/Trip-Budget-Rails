@@ -1,1 +1,22 @@
 <h1><%= @budget.name %> Expenses</h1>
+<hr>
+<br />
+<br />
+<!-- category icon goes here -->
+<div>
+  <%= form_for [@trip, @budget, @expense] do |f| %>
+    <table>
+      <tr>
+        <td>
+          <%= f.label :amount, "Expense" %>
+        </td>
+        <td class="expense_amount">
+          $<%= f.text_field :amount %>
+        </td>
+        <td>
+          <%= f.submit "Save" %>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

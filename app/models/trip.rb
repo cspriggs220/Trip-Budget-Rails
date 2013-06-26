@@ -5,6 +5,7 @@ class Trip < ActiveRecord::Base
   belongs_to :user
 
   has_many :budgets, :dependent => :destroy
+  has_many :expenses, :dependent => :destroy
   has_many :categories, through: :budgets
 
   validates_presence_of :user, :name

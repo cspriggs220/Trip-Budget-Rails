@@ -27,10 +27,9 @@ class ExpensesController < ApplicationController
 
   def destroy
     @trip = Trip.find( params[:trip_id] )
-    @budget = Budget.find( params[:budget_id] )
-    @expense = @budget.expenses.where( params[:expense_id] ).first
+    @expense = Expense.find( params[:id] )
     @expense.destroy
-    redirect_to(trip_path,
-      :notice => "Your expense was deleted")
+      redirect_to(trip_path(@trip),
+        :notice => "Your expense was deleted")
   end
 end

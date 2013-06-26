@@ -2,14 +2,15 @@
 <hr>
 <br />
 <div>
-  <h2 id="trip_name"><%= @trip.name %></h2>
+  <h2 class="trip_name"><%= @trip.name %></h2>
 </div>
 <br />
 <br />
-<h3>Budgets</h3>
+<h3 class="budget_header">Budgets</h3>
+<h5 class="grand_total">Grand Total: $<%= @trip.budgets.sum(:total) %></h5>
 <hr>
 <% @trip.budgets.each do |budget| %>
-  <div class="table_div">
+  <div id="budget_category_<%= budget.name %>" class="table_div">
     <table style="width:450px">
       <thead class="table_head">
         <tr>
@@ -32,7 +33,7 @@
         <% end %>
         <% if budget.total > 0 %>
           <tr class="budget_balance">
-            <td>Balance</td>
+            <td>Balance:</td>
             <td>$<%= budget.total - budget.expenses.sum(:amount) %></td>
           </tr>
           <tr>

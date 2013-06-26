@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625020803) do
+ActiveRecord::Schema.define(:version => 20130626023604) do
 
   create_table "budgets", :force => true do |t|
     t.integer  "total"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130625020803) do
     t.integer  "trip_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   create_table "trips", :force => true do |t|

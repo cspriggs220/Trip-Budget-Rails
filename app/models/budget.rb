@@ -6,6 +6,8 @@ class Budget < ActiveRecord::Base
 
   validates_presence_of :category_id, :total
 
+  default_scope order("created_at ASC")
+
   def name
     self.category.name
   end

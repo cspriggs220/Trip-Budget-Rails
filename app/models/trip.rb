@@ -13,6 +13,8 @@ class Trip < ActiveRecord::Base
 
   after_create :populate_budgets
 
+  default_scope order("created_at ASC")
+
   private
 
 

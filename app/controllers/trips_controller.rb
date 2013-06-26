@@ -3,7 +3,7 @@ class TripsController < ApplicationController
 
 
   def index
-    @trips = current_user.trips.order("created_at").all
+    @trips = current_user.trips.all
   end
 
   def new

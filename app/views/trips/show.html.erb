@@ -1,38 +1,50 @@
 <h1>Current Trip</h1>
 <hr>
 <br />
-<div id="trip_name">
-  <%= @trip.name %>
+<div>
+  <h2 id="trip_name"><%= @trip.name %></h2>
 </div>
 <br />
 <br />
-<h2>Set Budgets</h2>
+<h3>Budgets</h3>
+<p>Click category name to set it's budget</p>
 <hr>
-<table style="width:700px">
-  <thead id="budget_head">
-    <tr>
-      <th>Category</th>
-      <th>Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @trip.budgets.each do |budget| %>
-      <tr>
-        <td class="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget,
-         :trip_id => @trip.id) %></td>
-        <td class="budget_total"><%= budget.total %></td>
+<% @trip.budgets.each do |budget| %>
+  <div class="table_div">
+    <table style="width:450px">
+      <thead class="table_head">
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="budget_name_amount">
+          <td class="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget,
+           :trip_id => @trip.id) %></td>
+          <td class="budget_total"><%= budget.total %></td>
+        </tr>
+        <% budget.expenses.each do |expense| %>
+          <tr>
+            <td><%= expense.name %></td>
+            <td><%= expense.amount %></td>
+          </tr>
+        <% end %>
         <% if budget.total > 0 %>
+          <tr>
+            <td></td>
             <td class="expense_button">
               <%= link_to "Add Expense", new_trip_budget_expense_path( @trip, budget ) %>
-            <%#= form_tag({:controller => "expenses", :action => "new"}, :method => 'get') do %>
-              <%#= submit_tag("Add Expense") %>
-            <%# end %>
+              <%#= form_tag({:controller => "expenses", :action => "new"}, :method => 'get') do %>
+                <%#= submit_tag("Add Expense") %>
+              <%# end %>
             </td>
+          </tr>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+<% end %>
 <br />
 <br />
 <%= link_to "Back", trips_path %>

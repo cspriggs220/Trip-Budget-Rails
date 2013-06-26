@@ -1,4 +1,3 @@
-@wip
 Feature: User can set a budget expense
   As a logged in user
   I want to be able to add expenses

@@ -41,11 +41,11 @@
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 0px 10px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 0px 10px rgba(0,0,0,.55);
-  box-shadow: 5px 5px 10px rgba(0,0,0,.75);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.55);
+  box-shadow: 0px 1px 2px rgba(0,0,0,.75);
   height: 300px;
-  width: 57%;
+  /*width: 100%;*/
   padding: 125px 275px;
 }
 
@@ -58,11 +58,11 @@
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 0px 10px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 0px 10px rgba(0,0,0,.55);
-  box-shadow: 5px 5px 10px rgba(0,0,0,.75);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.55);
+  box-shadow: 0px 1px 2px rgba(0,0,0,.75);
   /*height: 300px;*/
-  /*width: 57%;*/
+  width: 57%;
   /*padding: 125px 275px;*/
 }
 
@@ -72,6 +72,28 @@
   font-weight: lighter;
 }
 .hero-unit-trips h1, h2, h3 {
+  font-family: Arial, Verdana;
+  font-weight: lighter;
+}
+
+.hero-unit-budget {
+  font-size: 24px;
+  text-align: center;
+  background-color: #eee;
+  padding: 20px;
+  margin: auto; /* negative indent the amount of the padding to maintain the grid system*/
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.55);
+  box-shadow: 0px 1px 2px rgba(0,0,0,.75);
+  /*height: 300px;*/
+  /*width: 57%;*/
+  /*padding: 125px 275px;*/
+}
+
+.hero-unit-budget h1, h2, h3 {
   font-family: Arial, Verdana;
   font-weight: lighter;
 }
@@ -123,6 +145,11 @@
   color: #333333;
 }
 
+.trips-links {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
 .btn-danger {
   margin-left: 5px;
 }
@@ -146,6 +173,10 @@ a:link {
   font-size: 18px;
   font-weight: lighter;
   margin-bottom: 40px;
+}
+
+.trip_name {
+  margin-top: 20px;
 }
 
 /*----New Trip Form --------*/
@@ -194,7 +225,7 @@ input {
 }
 
 .grand_total {
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .footer {
@@ -207,7 +238,7 @@ input {
 /*------Tables----------*/
 
 .table-message {
-  text-align: left;
+  text-align: center;
   font-size: 14px;
 }
 
@@ -215,9 +246,9 @@ input {
   border-top: 1px thin #333333;
 }
 
-.table {
-  float: left;
-  width: 25%;
+.trips-table {
+  margin: 0 0 0 150px;
+  width: 55%;
 }
 
 .table-head {
@@ -225,7 +256,17 @@ input {
 }
 
 .budget-table {
+  width: 25%;
   margin: 20px 20px;
+}
+
+.budget-card {
+  background-color: #eeeeee;
+  box-shadow: 1px 1px 10px #a3a3a3;
+}
+
+.budget-row {
+  margin-bottom: 10px;
 }
 
 /*body { padding-top: 60px }*/

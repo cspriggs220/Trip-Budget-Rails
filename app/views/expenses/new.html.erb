@@ -1,36 +1,33 @@
-
+<div class="hero-unit-welcome">
   <h1><%= @budget.name %> Expenses</h1>
   <hr>
-  <br />
-  <br />
   <!-- category icon goes here -->
-  <div>
-    <%= form_for [@trip, @budget, @expense] do |f| %>
-      <table>
-        <tr>
-          <td>
-            <%= f.label :name, "Expense Name" %>
-          </td>
-          <td class="expense_name">
-            <%= f.text_field :name %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= f.label :amount, "Expense Amount" %>
-          </td>
-          <td class="expense_amount">
-            $<%= f.text_field :amount %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= link_to "Cancel", :back %>
-          </td>
-          <td>
-            <%= f.submit "Save" %>
-          </td>
-        </tr>
-      </table>
-    <% end %>
-  </div>
+  <%= form_for [@trip, @budget, @expense] do |f| %>
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputExpenseName">
+          <%= f.label :name, "Expense Name" %>
+        </label>
+        <div class="controls expense_name">
+          <%= f.text_field :name %>
+        </div>
+        <label class="control-label" for="inputExpenseAmount">
+          <%= f.label :amount, "Expense Amount" %>
+        </label>
+        <div class="controls input-prepend input-append expense_amount">
+          <span class="add-on">$</span>
+          <%= f.text_field :amount, class: "span2" %>
+          <span class="add-on">.00</span>
+        </div>
+      </div><!-- end .control-group -->
+      <div class="control-group clearfix">
+        <div class="form">
+          <%= link_to "Cancel", :back, class: "btn cancel" %>
+        </div>
+        <div class="form">
+          <%= f.submit "Save", class: "btn btn-primary submit" %>
+        </div>
+      </div><!-- end .control-group -->
+    </form>
+  <% end %>
+</div><!-- end .hero-unit -->

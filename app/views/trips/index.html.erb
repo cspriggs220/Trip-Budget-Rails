@@ -16,7 +16,7 @@
       <em>There are no trips at this time</em>
     </div>
   <% else %>
-    <table class="table">
+    <table class="table trips-table">
       <tbody>
         <p class="table-message">
           <em>Click trip name to view</em>
@@ -31,12 +31,9 @@
       </tbody>
     </table>
   <% end %>
-  <div class="links">
-    <%= link_to "New Trip", new_trip_path, class: "btn" %>
-  </div>
+  <br />
+  <%= link_to "New Trip", new_trip_path, class: "btn trips-links" %>
   <br />
   <br />
-  <div class="links">
-    <%= link_to "Home", :root, class: "btn" %>
-  </div>
+  <%= link_to "Home", :root, class: "btn trips-links" %>
 </div><!-- end .hero-unit -->

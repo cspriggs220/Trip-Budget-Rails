@@ -31,6 +31,8 @@
 
 }
 
+/*------Hero Units-------------*/
+
 .hero-unit-welcome {
   text-align: center;
   background-color: #eee;
@@ -69,7 +71,7 @@
   font-family: Arial, Verdana;
   font-weight: lighter;
 }
-.hero-unit-trips h1 {
+.hero-unit-trips h1, h2, h3 {
   font-family: Arial, Verdana;
   font-weight: lighter;
 }
@@ -97,6 +99,9 @@
   height: 350px;
 }
 */
+
+/*------------------------*/
+
 .home_body {
   /*width: 420px;*/
   margin: 80px 0px 0px 0px;
@@ -143,6 +148,72 @@ a:link {
 
 .table td {
   border-top: 1px thin #333333;
+}
+
+/*----New Trip Form --------*/
+label {
+  padding-left: 112px;
+  text-align: left;
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: lighter;
+}
+
+input {
+  font-family: Arial;
+  font-weight: lighter;
+}
+
+.form {
+  display: inline-block;
+}
+
+.cancel {
+  float: left;
+}
+
+.submit {
+  float: right;
+}
+
+.cancel {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.cancel a {
+  color: #333333;
+}
+
+/*------Containers----------*/
+
+.budget-total-container {
+  height: 200px;
+}
+
+.grand_total {
+  margin-top: 100px;
+}
+
+.footer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+
+/*------Tables----------*/
+.table {
+  float: left;
+  width: 25%;
+}
+
+.table-head {
+  font-family: Arial;
+}
+
+.budget-table {
+  margin: 20px 20px;
 }
 
 /*body { padding-top: 60px }*/

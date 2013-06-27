@@ -1,35 +1,36 @@
-<h1><%= @budget.name %> Expenses</h1>
-<hr>
-<br />
-<br />
-<!-- category icon goes here -->
-<div>
-  <%= form_for [@trip, @budget, @expense] do |f| %>
-    <table>
-      <tr>
-        <td>
-          <%= f.label :name, "Expense Name" %>
-        </td>
-        <td class="expense_name">
-          <%= f.text_field :name %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= f.label :amount, "Expense Amount" %>
-        </td>
-        <td class="expense_amount">
-          $<%= f.text_field :amount %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= link_to "Cancel", :back %>
-        </td>
-        <td>
-          <%= f.submit "Save" %>
-        </td>
-      </tr>
-    </table>
-  <% end %>
-</div>
+
+  <h1><%= @budget.name %> Expenses</h1>
+  <hr>
+  <br />
+  <br />
+  <!-- category icon goes here -->
+  <div>
+    <%= form_for [@trip, @budget, @expense] do |f| %>
+      <table>
+        <tr>
+          <td>
+            <%= f.label :name, "Expense Name" %>
+          </td>
+          <td class="expense_name">
+            <%= f.text_field :name %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.label :amount, "Expense Amount" %>
+          </td>
+          <td class="expense_amount">
+            $<%= f.text_field :amount %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to "Cancel", :back %>
+          </td>
+          <td>
+            <%= f.submit "Save" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>

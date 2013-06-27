@@ -1,3 +1,8 @@
+<%- if flash[:alert] %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">x</button><strong><%= alert %></strong>
+  </div>
+<% end %>
 <%- if controller_name != 'sessions' %>
   <%= link_to "Sign in", new_session_path(resource_name) %><br />
 <% end -%>

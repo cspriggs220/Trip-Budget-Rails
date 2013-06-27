@@ -1,0 +1,153 @@
+@import "bootstrap";
+
+.nav  {
+  /*margin-bottom: 30px;*/
+  /*float: right;*/
+}
+
+.user_links {
+  padding-top: 6px;
+  font-size: 16px;
+}
+
+.navbar-inner .container {
+  /*padding-top: 20px;*/
+}
+
+.navbar-inner .container a {
+  font-size: 14px;
+}
+
+/*.notice {
+  font-family: Arial;
+  font-weight: lighter;
+  width: 200px;
+  background-color: yellow;
+  text-align: left;
+  font-size: 75%;
+}
+*/
+.alert {
+
+}
+
+.hero-unit-welcome {
+  text-align: center;
+  background-color: #eee;
+  padding: 20px;
+  margin: auto; /* negative indent the amount of the padding to maintain the grid system*/
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 0px 10px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 0px 10px rgba(0,0,0,.55);
+  box-shadow: 5px 5px 10px rgba(0,0,0,.75);
+  height: 300px;
+  width: 57%;
+  padding: 125px 275px;
+}
+
+.hero-unit-trips {
+  font-size: 22px;
+  text-align: center;
+  background-color: #eee;
+  padding: 20px;
+  margin: auto; /* negative indent the amount of the padding to maintain the grid system*/
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 0px 10px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 0px 10px rgba(0,0,0,.55);
+  box-shadow: 5px 5px 10px rgba(0,0,0,.75);
+  /*height: 300px;*/
+  /*width: 57%;*/
+  /*padding: 125px 275px;*/
+}
+
+.hero-unit-welcome h1 {
+  /*text-align: center;*/
+  font-family: Arial, Verdana;
+  font-weight: lighter;
+}
+.hero-unit-trips h1 {
+  font-family: Arial, Verdana;
+  font-weight: lighter;
+}
+
+/*.content {
+  padding: 125px 275px;
+}
+
+
+.content h1 {
+  font-family: Arial, Verdana;
+  font-weight: lighter;
+}
+*/
+/*.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px;  negative indent the amount of the padding to maintain the grid system
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.55);
+  box-shadow: 0 1px 2px rgba(0,0,0,.75);
+  height: 350px;
+}
+*/
+.home_body {
+  /*width: 420px;*/
+  margin: 80px 0px 0px 0px;
+  text-align: center;
+  /*font-weight: lighter;*/
+}
+
+.home_body .links {
+  font-size: 22px;
+  /*margin-left: 60px;*/
+}
+
+.links {
+  margin-top: 60px;
+  font-size: 22px;
+}
+
+.links a {
+  color: #333333;
+}
+
+.btn-danger {
+  margin-left: 5px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.btn a {
+  color: #333333;
+  font-size: 20px;
+}
+
+.btn-danger a {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.table-message {
+  text-align: left;
+  font-size: 14px;
+}
+
+.table td {
+  border-top: 1px thin #333333;
+}
+
+/*body { padding-top: 60px }*/
+
+@import "bootstrap-responsive";
+
+
+

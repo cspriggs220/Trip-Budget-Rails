@@ -1,22 +1,42 @@
-<h1>Trips</h1>
-<hr>
-<table>
-  <tbody>
-    <%- @trips.each do |trip| %>
-      <tr>
-        <td><%= link_to trip.name, trip_path(trip)%></td>
-        <td><%= link_to "Edit", edit_trip_path(trip), id: "edit_trip_#{trip.id}"%></td>
-        <td><%= link_to "Delete", trip, id: "delete_trip_#{trip.id}", :method => :delete%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%- if @trips.empty? %>
-  <em>There are no trips at this time</em>
-<% end %>
-<br />
-<br />
-<%= link_to "New Trip", new_trip_path %>
-<br />
-<br />
-<%= link_to "Home", :root %>
+<div class="hero-unit-trips">
+  <%- if flash[:notice] %>
+    <div class="notice">
+      <button type="button" class="close" data-dismiss="alert">x</button><strong><%= notice %></strong>
+    </div>
+  <% end %>
+  <%- if flash[:alert] %>
+    <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">x</button><strong><%= alert %></strong>
+    </div>
+  <% end %>
+  <h1>Your Trip List</h1>
+  <hr>
+  <%- if @trips.empty? %>
+    <div class="home_body" >
+      <em>There are no trips at this time</em>
+    </div>
+  <% else %>
+    <table class="table">
+      <tbody>
+        <p class="table-message">
+          <em>Click trip name to view</em>
+        </p>
+        <%- @trips.each do |trip| %>
+          <tr>
+            <td class="trip-name"><%= link_to trip.name, trip_path(trip)%></td>
+            <td class="btn"><%= link_to "Edit", edit_trip_path(trip), id: "edit_trip_#{trip.id}"%></td>
+            <td class="btn btn-danger"><%= link_to "Delete", trip, id: "delete_trip_#{trip.id}", :method => :delete%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  <div class="links btn">
+    <%= link_to "New Trip", new_trip_path %>
+  </div>
+  <br />
+  <br />
+  <div class="links btn">
+    <%= link_to "Home", :root %>
+  </div>
+</div><!-- end .hero-unit -->

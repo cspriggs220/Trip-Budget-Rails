@@ -10,41 +10,37 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <% if user_signed_in? %>
-            <%= link_to "Settings", edit_user_registration_path %>
-            |
-            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            <p><%= current_user.email %></p>
-          <% else %>
-            <%= link_to "Sign Up", new_user_registration_path %>
-            |
-            <%= link_to "Sign In", new_user_session_path %>
-          <% end %>
+    <% if user_signed_in? %>
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <div class="user_links">
+              <%= link_to "Settings", edit_user_registration_path %>
+              |
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <div class="nav-collapse collapse">
+                <p class="navbar-text pull right">Logged in <%= current_user.email %></p>
+              </div>
+            </div><!-- end of user_links -->
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    <% end %>
     <div id="main" role= "main">
-      <div class="container">
+      <div class="container-fluid">
         <div class="content">
           <div class="row">
             <div class="span12">
-              <%- if flash[:notice] %>
-                <li class="notice"><%= notice %></li>
-              <% end %>
-              <%- if flash[:alert] %>
-                <li class="alert"><%= alert %></li>
-              <% end %>
+
 
               <%= yield %>
-            </div>
-          </div>
+
+            </div><!-- end of .span12 -->
+          </div><!-- end of .row -->
           <footer>
           </footer>
-      </div><!-- ! end of .container -->
-    </div>
-  </div>
+        </div><!-- end of .content -->
+      </div><!-- end of .container -->
+    </div><!-- end of #main -->
   </body>
 </html>

@@ -1,0 +1,28 @@
+<div class="hero-unit-welcome">
+  <%- if flash[:notice] %>
+    <li class="notice"><%= notice %></li>
+  <% end %>
+  <%- if flash[:alert] %>
+    <li class="alert"><%= alert %></li>
+  <% end %>
+  <h1>Welcome to Trip Budget</h1>
+  <% if user_signed_in? %>
+    <div class="links btn">
+      <%= link_to "Create a Trip", new_trip_path %>
+    </div>
+      <br />
+    <div class="links btn">
+      <%= link_to "View Trips", trips_path %>
+    </div>
+  <% else %>
+    <div class="home_body">
+      <p><b>Please sign in to view your profile</b></p><br />
+      <div class="links btn">
+        <%= link_to "Sign In", new_user_session_path %>
+      </div>
+      <div class="links btn">
+        <%= link_to "Sign Up", new_user_registration_path %>
+      </div>
+    </div>
+  <% end %>
+</div><!-- end of .hero-unit -->

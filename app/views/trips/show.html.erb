@@ -7,7 +7,7 @@
 <br />
 <br />
 <h3 class="budget_header">Budgets</h3>
-<h5 class="grand_total">Grand Total: $<%= @trip.budgets.sum(:total) %></h5>
+<h5 class="grand_total">Total <%= @trip.name %> Budget: $<%= @trip.budgets.sum(:total) %></h5>
 <hr>
 <% @trip.budgets.each do |budget| %>
   <div id="budget_category_<%= budget.name %>" class="table_div">

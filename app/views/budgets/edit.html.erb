@@ -1,29 +1,27 @@
-<h1>Set Budget</h1>
-<hr>
-<p>Edit your budget amount below and save</p>
-<%= form_for [@trip, @budget] do |f| %>
-  <table>
-    <tbody>
-      <tr>
-        <td>
+<div class="hero-unit-welcome">
+  <h1>Set your budget</h1>
+  <hr>
+  <p class="message"><em>Edit your budget amount below</em></p>
+  <%= form_for [@trip, @budget] do |f| %>
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputTripName">
           <%= f.label :total, "#{@budget.name} Total" %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= f.text_field :total %>
-        </td>
-      </tr>
-      <br />
-      <br />
-      <tr>
-        <td>
-          <%= link_to "Back", @trip %>
-        </td>
-        <td>
-          <%= f.submit "Save" %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-<% end %>
+        </label>
+        <div class="controls input-prepend input-append">
+          <span class="add-on">$</span>
+          <%= f.text_field :total, class: "span2" %>
+          <span class="add-on">.00</span>
+        </div><!-- end .controls -->
+      </div><!-- end .control-group -->
+      <div class="control-group clearfix">
+        <div class="form">
+          <%= link_to "Back", @trip, class: "btn cancel" %>
+        </div>
+        <div class="form">
+          <%= f.submit "Save", class: "btn btn-primary submit" %>
+        </div>
+      </div><!-- end .control-group -->
+    </form>
+  <% end %>
+</div><!-- end .hero-unit -->

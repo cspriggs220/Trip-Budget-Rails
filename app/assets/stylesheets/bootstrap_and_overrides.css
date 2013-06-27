@@ -141,18 +141,16 @@ a:link {
   font-size: 20px;
 }
 
-.table-message {
-  text-align: left;
-  font-size: 14px;
-}
-
-.table td {
-  border-top: 1px thin #333333;
+.message {
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: lighter;
+  margin-bottom: 40px;
 }
 
 /*----New Trip Form --------*/
 label {
-  padding-left: 112px;
+  padding-left: 110px;
   text-align: left;
   font-size: 18px;
   font-family: Arial;
@@ -166,6 +164,10 @@ input {
 
 .form {
   display: inline-block;
+}
+
+.control-group {
+  margin-top: 20px;
 }
 
 .cancel {
@@ -203,6 +205,16 @@ input {
 }
 
 /*------Tables----------*/
+
+.table-message {
+  text-align: left;
+  font-size: 14px;
+}
+
+.table td {
+  border-top: 1px thin #333333;
+}
+
 .table {
   float: left;
   width: 25%;

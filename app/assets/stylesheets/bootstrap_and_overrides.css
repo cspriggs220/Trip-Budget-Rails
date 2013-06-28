@@ -1,22 +1,33 @@
 @import "bootstrap";
 
+/*---------Nav----------*/
+
 .nav  {
   /*margin-bottom: 30px;*/
   /*float: right;*/
 }
+
+.navbar {
+  margin-bottom: 0;
+/*  background-color: #ffffff;
+*/}
 
 .user_links {
   padding-top: 6px;
   font-size: 16px;
 }
 
-.navbar-inner .container {
-  /*padding-top: 20px;*/
-}
+.navbar-inner {
+/*  background-color: #ffffff;
+*/}
 
 .navbar-inner .container a {
   font-size: 14px;
 }
+
+.navbar-inner .container {
+/*  background-color: #ffffff;
+*/}
 
 /*.notice {
   font-family: Arial;
@@ -52,15 +63,15 @@
 .hero-unit-trips {
   font-size: 22px;
   text-align: center;
-  background-color: #eee;
+  background-color: #ffffff;
   padding: 20px;
   margin: auto; /* negative indent the amount of the padding to maintain the grid system*/
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.55);
-  box-shadow: 0px 1px 2px rgba(0,0,0,.75);
+  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 2px 2px rgba(0,0,0,.55);
+  box-shadow: 0px 2px 2px rgba(0,0,0,.75);
   /*height: 300px;*/
   width: 57%;
   /*padding: 125px 275px;*/
@@ -79,7 +90,7 @@
 .hero-unit-budget {
   font-size: 24px;
   text-align: center;
-  background-color: #eee;
+  background-color: #ffffff;
   padding: 20px;
   margin: auto; /* negative indent the amount of the padding to maintain the grid system*/
   -webkit-border-radius: 0 0 6px 6px;
@@ -122,7 +133,7 @@
 }
 */
 
-/*------------------------*/
+/*------Buttons,Links,Misc----------*/
 
 .home_body {
   /*width: 420px;*/
@@ -168,6 +179,14 @@ a:link {
   font-size: 20px;
 }
 
+.btn-budget a {
+  /*font-size: */
+}
+
+.btn-small {
+
+}
+
 .message {
   font-family: Arial;
   font-size: 18px;
@@ -179,6 +198,11 @@ a:link {
   margin-top: 20px;
 }
 
+.expense_button a {
+  /*float: right;*/
+  /*text-align: right;*/
+}
+
 /*----New Trip Form --------*/
 label {
   padding-left: 110px;
@@ -186,6 +210,11 @@ label {
   font-size: 18px;
   font-family: Arial;
   font-weight: lighter;
+}
+
+label.trip-label {
+  padding-left: 90px;
+  /*text-align: center;*/
 }
 
 input {
@@ -242,10 +271,14 @@ input {
   font-size: 14px;
 }
 
-.table td {
-  border-top: 1px thin #333333;
+table {
+  border-color: #333333;
 }
 
+/*.table td {
+  border-top: 1px thin #333333;
+}
+*/
 .trips-table {
   margin: 0 0 0 150px;
   width: 55%;
@@ -253,23 +286,63 @@ input {
 
 .table-head {
   font-family: Arial;
+  font-size: 16px;
 }
 
 .budget-table {
-  width: 25%;
-  margin: 20px 20px;
+  width: 95%;
+  margin: 10px 10px;
 }
 
 .budget-card {
-  background-color: #eeeeee;
+  /*background-color: #eeeeee;*/
+  background-color: #ffffff;
   box-shadow: 1px 1px 10px #a3a3a3;
 }
 
 .budget-row {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/*body { padding-top: 60px }*/
+td.budget-expense {
+  text-align: right;
+}
+
+td.budget_balance {
+  text-align: right;
+}
+
+.table tbody tr.success > td {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #94FF94;
+}
+
+.table tbody tr.error > td {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #FF4D4D;
+}
+
+td.table {
+  border-top: 1px solid #a2a2a2;
+}
+
+td.budget_message {
+  font-style: italic;
+  text-align: center;
+}
+
+/*---------Global----------*/
+
+body {
+  background-color: #eeeeee;
+  font-family: Arial;
+  font-weight: lighter;
+  font-size: 15px;
+}
 
 @import "bootstrap-responsive";
 

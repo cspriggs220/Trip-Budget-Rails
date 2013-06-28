@@ -1,4 +1,14 @@
 <div class="hero-unit-budget">
+  <%- if flash[:notice] %>
+    <div class="alert">
+      <button type="button" class="close" data-dismiss="alert">x</button><strong><%= notice %></strong>
+    </div>
+  <% end %>
+  <%- if flash[:alert] %>
+    <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">x</button><strong><%= alert %></strong>
+    </div>
+  <% end %>
   <h1 class="trip_name"><%= @trip.name %></h1>
   <h3 class="grand_total">Total Budget: $<%= @trip.budgets.sum(:total) %></h3>
   <br />
@@ -14,82 +24,79 @@
         <% @trip.budgets[0..3].each do |budget| %>
           <div class="span3 budget-card">
             <table id="budget_category_<%= budget.name %>" class="table budget-table">
-              <thead class="table-head">
+              <thead class="info">
                 <tr>
-                  <th>Category</th>
-                  <th>Amount</th>
+                  <th class="table-head"><%= link_to budget.name, edit_trip_budget_path(budget,
+                   :trip_id => @trip.id) %> Budget:</th>
+                  <th class="table-head">$<%= budget.total %></th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="budget_name_amount">
-                  <td class="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget,
-                   :trip_id => @trip.id) %></td>
-                  <td class="budget_total">$<%= budget.total %></td>
-                </tr>
                 <% budget.expenses.each do |expense| %>
                   <tr>
                     <td><%= expense.name %></td>
-                    <td>$<%= expense.amount %></td>
-                    <td><%= link_to "Delete", [@trip, budget, expense], id: "delete_trip_budget_expense_#{expense.id}", :method => :delete %></td>
+                    <td class="budget-expense">-<%= expense.amount %></td>
+                    <td><%= link_to "Delete", [@trip, budget, expense], :method => :delete, class: "btn-small btn-danger" %></td>
                   </tr>
                 <% end %>
                 <% if budget.total > 0 %>
-                  <tr class="budget_balance">
-                    <td>Balance:</td>
-                    <td>$<%= budget.total - budget.expenses.sum(:amount) %></td>
-                  </tr>
+                  <% if budget.total > budget.expenses.sum(:amount) %>
+                    <tr class="success">
+                  <% else %>
+                    <tr class="error">
+                  <% end %>
+                      <td>Balance:</td>
+                      <td class="budget_balance">$<%= budget.total - budget.expenses.sum(:amount) %></td>
+                    </tr>
+                    <tr class="expense_button">
+                      <td><%= link_to "Add Expense", new_trip_budget_expense_path( @trip, budget ), class: "btn-small btn-primary" %></td>
+                    </tr>
                 <% else %>
-                  <tr class="budget_message">
-                    <td><em>Click on <%= budget.name %> to add a budget</em></td>
+                  <tr>
+                    <td class="budget_message">Click <%= budget.name %> to add a budget</td>
                   </tr>
                 <% end %>
               </tbody>
             </table>
-            <div class="expense_button">
-              <%= link_to "Add Expense", new_trip_budget_expense_path( @trip, budget ), class: "btn" %>
-            </div>
           </div><!-- end span3 -->
         <% end %>
       </div><!-- end row -->
 
 
-      <div class="row-fluid">
+      <div class="row-fluid budget-row">
         <% @trip.budgets[4..6].each do |budget| %>
           <div class="span3 budget-card">
             <table id="budget_category_<%= budget.name %>" class="table budget-table">
               <thead class="table-head">
                 <tr>
-                  <th>Category</th>
-                  <th>Amount</th>
+                  <th><%= link_to budget.name, edit_trip_budget_path(budget,
+                   :trip_id => @trip.id) %> Budget:</th>
+                  <th>$<%= budget.total %></th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="budget_name_amount">
-                  <td class="budget_name"><%= link_to budget.name, edit_trip_budget_path(budget,
-                   :trip_id => @trip.id) %></td>
-                  <td class="budget_total">$<%= budget.total %></td>
-                </tr>
                 <% budget.expenses.each do |expense| %>
                   <tr>
                     <td><%= expense.name %></td>
-                    <td>$<%= expense.amount %></td>
-                    <td><%= link_to "Delete", [@trip, budget, expense], id: "delete_trip_budget_expense_#{expense.id}", :method => :delete %></td>
+                    <td>-<%= expense.amount %></td>
+                    <td><%= link_to "Delete", [@trip, budget, expense], id: "delete_trip_budget_expense_#{expense.id}", :method => :delete, class: "btn-small btn-danger" %></td>
                   </tr>
                 <% end %>
                 <% if budget.total > 0 %>
-                  <tr class="budget_balance">
-                    <td>Balance:</td>
-                    <td>$<%= budget.total - budget.expenses.sum(:amount) %></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td class="expense_button">
-                      <%= link_to "Add Expense", new_trip_budget_expense_path( @trip, budget ), class: "btn" %>
-                    </td>
-                  </tr>
+                  <% if budget.total > budget.expenses.sum(:amount) %>
+                    <tr class="success">
+                  <% else %>
+                    <tr class="error">
+                  <% end %>
+                      <td>Balance:</td>
+                      <td class="budget_balance">$<%= budget.total - budget.expenses.sum(:amount) %></td>
+                    </tr>
+                    <tr class="expense_button">
+                      <td><%= link_to "Add Expense", new_trip_budget_expense_path( @trip, budget ), class: "btn-small btn-primary" %></td>
+                    </tr>
                 <% else %>
-                  <tr class="budget_message">
-                    <td><em>Click on <%= budget.name %> to add a budget</em></td>
+                  <tr>
+                    <td class="budget_message">Click <%= budget.name %> to add a budget</td>
                   </tr>
                 <% end %>
               </tbody>

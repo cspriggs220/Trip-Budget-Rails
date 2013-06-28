@@ -78,7 +78,7 @@
                 <% budget.expenses.each do |expense| %>
                   <tr>
                     <td><%= expense.name %></td>
-                    <td>-<%= expense.amount %></td>
+                    <td class="budget-expense">-<%= expense.amount %></td>
                     <td><%= link_to "Delete", [@trip, budget, expense], id: "delete_trip_budget_expense_#{expense.id}", :method => :delete, class: "btn-small btn-danger" %></td>
                   </tr>
                 <% end %>

@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'awesome_print'
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'haml-rails'
 gem 'fabrication'
+gem 'haml-rails'
 gem 'jquery-rails'
+gem 'newrelic_rpm'
 gem 'pg'
-gem 'awesome_print'
 gem 'rails', '3.2.13'
 
 # Gems used only for assets and not required
